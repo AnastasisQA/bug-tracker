@@ -2,10 +2,11 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('UNIT TESTS BACK END') {
             steps {
-                echo 'Hello World'
-                sh 'echo Hello tasooo'
+               dir('bug-tracker-backend') {
+                    go test -v ./...
+               }
             }
         }
     }
