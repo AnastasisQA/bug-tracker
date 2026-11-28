@@ -10,7 +10,15 @@ pipeline {
                         reuseNode true
                     }
                 }
-                
+
+                environment {
+                    // Container runs as uid 1000 with HOME=/, so point Go's
+                    // cache and module dirs at the writable workspace.
+                    HOME       = "${WORKSPACE}"
+                    GOCACHE    = "${WORKSPACE}/.cache/go-build"
+                    GOPATH     = "${WORKSPACE}/.go"
+                }
+
                 steps {
                     dir('bugtracker-backend'){
                         sh 'go test -v ./...'
