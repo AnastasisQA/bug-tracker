@@ -25,8 +25,7 @@ pipeline {
                     }
                }
             }
-        }
-         stage('UNIT TESTS Frontend') {
+            stage('UNIT TESTS Frontend') {
             agent {
                     docker{
                         image 'node:20-alpine'
@@ -43,4 +42,6 @@ pipeline {
                }
 
          }
+        }
+         
     }
