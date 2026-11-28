@@ -54,11 +54,11 @@ pipeline {
                 }
             }
 
-            post {
-                always {
-                    junit 'bugtracker-frontend/test-results.xml'
-                }
-            }
+          //  post {
+         //       always {
+         //           junit 'bugtracker-frontend/test-results.xml'
+          //      }
+          //  }
 
          }
         
